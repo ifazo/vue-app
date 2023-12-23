@@ -16,6 +16,41 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/blogs',
+      name: 'blogs',
+      component: () => import('../views/BlogsView.vue')
+    },
+    {
+      path: '/blogs/:id',
+      name: 'blog',
+      component: () => import('../views/BlogView.vue')
+    },
+    {
+      path: '/products',
+      name: 'products',
+      component: () => import('../views/ProductsView.vue')
+    },
+    {
+      path: '/products/:id',
+      name: 'product',
+      component: () => import('../views/ProductView.vue')
+    },
+    {
+      path: '/categories',
+      name: 'categories',
+      component: () => import('../views/CategoriesView.vue')
+    },
+    {
+      path: '/categories/:id',
+      name: 'category',
+      component: () => import('../views/CategoryView.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/NotFoundView.vue')
     }
   ]
 })
