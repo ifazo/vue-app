@@ -1,9 +1,11 @@
+<template>
+  <div>
+    <HeroComponent />
+  </div>
+</template>
+
 <script setup lang="ts">
+import HeroComponent from '@/components/HeroComponent.vue'
 </script>
 
-<template>
-  <main>
-    <h1 class="text-3xl font-bold text-center">Hello world!</h1>
-    <p>Home page</p>
-  </main>
-</template>
+<style scoped></style>
