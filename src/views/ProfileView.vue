@@ -1,9 +1,11 @@
 <template>
   <div>
-    <p>Profile page</p>
+    <SignIn />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SignIn from '@/components/SignIn.vue'
+</script>
 
 <style scoped></style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Product with id:</p>
+    <p>Sign in</p>
   </div>
 </template>
 
