@@ -110,7 +110,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-            <img class="-mb-20" src="/images/2fugLKmm9JsRrFhS_F57Z.png" alt="" />
+            <img class="-mb-20" src="/images/beep-cover.png" alt="" />
           </div>
         </div>
       </div>

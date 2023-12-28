@@ -95,7 +95,15 @@
 import { onMounted, ref } from 'vue'
 import { supabase } from '../supabase'
 
-const products = ref(null)
+interface Product {
+  id: number
+  title: string
+  image: string
+  description: string
+  price: number
+}
+
+const products = ref<Product[]>([])
 
 const getProducts = async () => {
   const { data, error } = await supabase.from('products').select('*')
@@ -113,3 +121,4 @@ onMounted(() => {
 </script>
 
 <style scoped></style>
+../interfaces

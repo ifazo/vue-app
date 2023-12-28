@@ -43,7 +43,7 @@
             @click.prevent="googleSignIn()"
             class="-2 mt-8 flex items-center justify-center rounded-md border px-4 py-1 outline-none ring-gray-400 ring-offset-2 transition hover:border-transparent hover:bg-black hover:text-white focus:ring-2"
           >
-            <img class="mr-2 h-5" src="/images/-9jfz8JJkYKu0yDYmD5WM.svg" alt="" /> Get started with
+            <img class="mr-2 h-5" src="/images/beep-logo.png" alt="" /> Get started with
             Google
           </button>
           <div class="relative mt-8 flex h-px place-items-center bg-gray-200">

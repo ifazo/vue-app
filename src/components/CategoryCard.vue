@@ -50,7 +50,14 @@
 import { onMounted, ref } from 'vue'
 import { supabase } from '../supabase'
 
-const categories = ref(null)
+interface Category {
+    id: number;
+    name: string;
+    description: string;
+};
+
+
+const categories = ref<Category[]>([])
 
 const getCategories = async () => {
   const { data } = await supabase.from('categories').select()
