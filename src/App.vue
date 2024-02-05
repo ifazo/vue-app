@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderComponent />
+    <TheHeader />
     <RouterView />
     <FooterComponent />
   </div>
@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import FooterComponent from './components/FooterComponent.vue'
-import HeaderComponent from './components/HeaderComponent.vue'
+import TheHeader from './components/TheHeader.vue';
 </script>
 
 <style scoped></style>

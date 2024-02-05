@@ -1,4 +1,5 @@
 import './style.css'
+import 'preline/preline'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
