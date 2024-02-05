@@ -47,15 +47,14 @@
 </template>
 
 <script setup lang="ts">
+import supabase from '@/lib/supabase';
 import { onMounted, ref } from 'vue'
-import { supabase } from '../supabase'
 
 interface Category {
-    id: number;
-    name: string;
-    description: string;
-};
-
+  id: number
+  name: string
+  description: string
+}
 
 const categories = ref<Category[]>([])
 
@@ -70,3 +69,4 @@ onMounted(() => {
 </script>
 
 <style scoped></style>
+../lib/supabase

@@ -37,8 +37,10 @@
               </div>
             </div>
           </div>
-          <div v-if="isLogged"
-            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0" >
+          <div
+            v-if="user && user.id"
+            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
             <!-- Cart button -->
             <button
               type="button"
@@ -93,22 +95,25 @@
                     </RouterLink>
                   </MenuItem>
                   <MenuItem v-slot="{ active }">
-                    <RouterLink
-                      to="/"
+                    <button
+                      type="button"
+                      @click="handleSignOut"
                       :class="[
                         active ? 'bg-gray-100' : '',
                         'block px-4 py-2 text-sm text-gray-700'
                       ]"
                     >
                       Sign out
-                    </RouterLink>
+                    </button>
                   </MenuItem>
                 </MenuItems>
               </transition>
             </Menu>
           </div>
-          <div v-else
-           class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0" >
+          <div
+            v-else
+            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
             <RouterLink
               to="/sign-in"
               class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -153,6 +158,8 @@ import {
 } from '@headlessui/vue'
 import { Bars3Icon, ShoppingCartIcon, UserIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import logo from '@/assets/logo.svg'
+import { getUser, signOut } from '@/lib/supabase'
+import { onMounted, ref } from 'vue'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
@@ -161,7 +168,38 @@ const navigation = [
   { name: 'Blogs', href: '/blogs', current: false }
 ]
 
-const isLogged = false
+type User = {
+  id: number
+  name: string
+  image: string
+  email: string
+}
+
+let user = ref<User>({
+  id: 0,
+  name: '',
+  image: '',
+  email: ''
+})
+
+onMounted(async () => {
+  try {
+    user.value = (await getUser()) as any
+    console.log('user:', user.value)
+  } catch (error) {
+    console.error('Error fetching user:', error)
+  }
+})
+
+const handleSignOut = async () => {
+  await signOut()
+    .then(() => {
+      console.log('Sign out successfully')
+    })
+    .catch((error) => {
+      console.error('Sign out error', error)
+    })
+}
 </script>
 
 <style scoped></style>

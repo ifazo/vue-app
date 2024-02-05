@@ -92,8 +92,8 @@
 </template>
 
 <script setup lang="ts">
+import supabase from '@/lib/supabase';
 import { onMounted, ref } from 'vue'
-import { supabase } from '../supabase'
 
 interface Product {
   id: number
@@ -121,4 +121,4 @@ onMounted(() => {
 </script>
 
 <style scoped></style>
-../interfaces
+../interfaces../lib/supabase
