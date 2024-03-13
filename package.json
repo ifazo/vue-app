@@ -1,5 +1,5 @@
 {
-  "name": "vue-ts-app",
+  "name": "ifaz-vue-app",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -19,7 +19,9 @@
     "@heroicons/vue": "^2.1.1",
     "@supabase/supabase-js": "^2.39.1",
     "@tailwindcss/forms": "^0.5.7",
+    "firebase": "^10.8.1",
     "pinia": "^2.1.7",
+    "primevue": "^3.49.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
